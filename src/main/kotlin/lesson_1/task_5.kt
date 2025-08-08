@@ -1,7 +1,7 @@
 package org.example.lesson_1
 
+const val TIME_60: Int = 60
 fun main() {
-    val TIME_60: Int = 60
     val seconds: Int = 6480
     val minute: Int = seconds / TIME_60
     val reamainingSeconds: Int = seconds % TIME_60
