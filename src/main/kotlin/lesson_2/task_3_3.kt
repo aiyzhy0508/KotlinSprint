@@ -6,14 +6,12 @@ fun main() {
     val exitMinute = 39
     val tripTime = 457
 
-    val arriveHour = exitHour + tripTime / TIME_60
-    val arriveMinute = exitMinute + tripTime % TIME_60
+    val arriveTimeInMinute = (exitHour * 60 + exitMinute + tripTime) % 1440
 
-    if (exitMinute + arriveMinute > 59) {
-        println("%02d:%02d".format(arriveHour + 1, arriveMinute - 60))
-    } else {
-        println("%02d:%02d".format(arriveHour, arriveMinute))
-    }
+    val arriveHour = arriveTimeInMinute / TIME_60
+    val arriveMinute = arriveTimeInMinute % TIME_60
+
+    println("%02d:%02d".format(arriveHour, arriveMinute))
 
 
 }
